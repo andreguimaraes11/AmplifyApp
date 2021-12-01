@@ -1,0 +1,18 @@
+.imgCentralizada{
+  position: sticky;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.imgContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 200px;
+  padding-left: 10%;
+  padding-right: 10%;
+}

@@ -1,0 +1,14 @@
+.tituloContent {
+  display: block;
+  font-family: Poppins-Bold;
+  font-size: 30px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+}
+.tituloContent i {
+  font-size: 60px;
+}
+
+.p-b-26 {padding-bottom: 26px;}
+

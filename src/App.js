@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import LoginController from './components/LoginController';
+import CadastroController from './components/CadastroController'
+import GrupoController from './components/GrupoController';
+import {NovoGrupo} from './components/GrupoController';
+import EsqueciMinhaSenha from './components/EsqueciMinhaSenha';
+import LancamentoController from './components/LancamentosController';
+import {NovoLancamento} from './components/LancamentosController';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div>
+    <AmplifySignOut />
+    <Router>
+    <Routes>
+      <Route path="/" element={<LoginController />} />
+      <Route path="/Login" element={<LoginController />} />
+      <Route path="/NovoCadastro" element={<CadastroController />} />
+      <Route path="/ListaGrupos" element={<GrupoController />} />      
+      <Route path="/NovoGrupo" element={<NovoGrupo />} />           
+      <Route path="/RecuperarSenha" element={<EsqueciMinhaSenha />} />        
+      <Route path="/ListaLancamentos" element={<LancamentoController />} />
+      <Route path="/NovoLancamento" element={<NovoLancamento />} />      
+    </Routes>
+  </Router>
+  </div>
+);
 
-export default App;
+export default withAuthenticator(App);
